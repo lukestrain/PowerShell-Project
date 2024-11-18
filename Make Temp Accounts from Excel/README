@@ -1,0 +1,6 @@
+README FOR Make Temp Accounts From Excel
+
+This script imports data from an excel sheet to make a new OU and accounts with a set expiration date for a group of people outside the organization that need access to our network.
+At Camp Shelby, we frequently had visitors to the base that needed temporary access.
+Accounts are set to expire at a date determined in the excel sheet.
+I also included an example excel document that shows the format required for it to work.
