@@ -1,7 +1,7 @@
 ﻿#Import Excel
 Import-Module ImportExcel
 
-$path = "C:\Users\Administrator.ADATUM\Desktop\TempAccounts.xlsx"
+$path = Read-Host "Type the filepath of the excel file " #For Lab its C:\Users\Administrator.ADATUM\Desktop\TempAccounts.xlsx
 #Excel headers have the following info: Organization name, exercise dates and supervisor
 
 $OrgInfo = Import-Excel -path $path -StartRow 2 -EndRow 3
@@ -10,10 +10,11 @@ $OrgInfo = Import-Excel -path $path -StartRow 2 -EndRow 3
 #$expDate = Import-Excel -path $path -EndRow 2 -ImportColumns 4 -AsDate 4 #exercise end date from excel + 1 day
 $expDate = $orgInfo.'Expiration Date'
 $OUName = $OrgInfo.OrgName + "_temp"
+$OUPath = Read-Host "Enter the path for the temporary OU" #For lab it's DC=ADATUM,DC=COM
 
 
-New-ADOrganizationalUnit -Name $OUName -ProtectedFromAccidentalDeletion $false -path "DC=ADATUM,DC=COM" #Creates a new OU for the temporary organization
-$NewOUPath = "OU=$OUNAME,DC=ADATUM,DC=COM"
+New-ADOrganizationalUnit -Name $OUName -ProtectedFromAccidentalDeletion $false -path $OUPath #Creates a new OU for the temporary organization
+$NewOUPath = "OU=$OUNAME,$OUPath"
 
 $TempPass = ConvertTo-SecureString -AsPlainText "Pa55w.rd" -Force ## Defines the temporary Password variable
 
@@ -22,7 +23,7 @@ $TempPass = ConvertTo-SecureString -AsPlainText "Pa55w.rd" -Force ## Defines the
 
 #Finally, create accounts from the third section of the excel has required user information for accounts. First, Last, Position, Cell #. Set Temp Password
 
-$TempAccounts = Import-Excel -Path "C:\Users\Administrator.ADATUM\Desktop\TempAccounts.xlsx" -StartRow 5
+$TempAccounts = Import-Excel -Path $path -StartRow 5
 
 forEach($u in $TempAccounts) {
     $first = ($u.'First Name') #first name from excel
