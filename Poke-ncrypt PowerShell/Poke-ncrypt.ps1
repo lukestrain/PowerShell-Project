@@ -4,5 +4,21 @@
 
 #>
 
-$dex = import-csv -path ".\Pokedex Entries Formatted.csv"
-$dex | Get-Member
+$dex = import-csv -path "C:\Users\lukes\GitHubRep\PowerShell-Project\Poke-ncrypt PowerShell\Pokedex Entries Formatted.csv"
+$dex | fl
+
+function PoKey {
+    param(
+        [array]$PokemonTeam
+    )
+
+    #Error checking to ensure the array length is correct, and that there are all items in the Array are pokemon names or numbers
+    if($PokemonTeam.length -lt 1){
+        write-host "ERROR: Requires at least pokemon on the team"
+    }
+    elseif ($PokemonTeam.length -gt 6 ) {
+        Write-Host "ERROR: You can only have six Pokemon in the array"
+        <# Action when this condition is true #>
+    }
+
+}
