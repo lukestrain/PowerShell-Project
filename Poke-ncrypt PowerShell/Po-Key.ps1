@@ -1,6 +1,8 @@
 <# This is a fun way to generate a symmetric key in PowerShell using Pokemon teams! 
 
- It requires a custom csv that was formatted to remove special characters and spaces. I could make a version with data for each Pokemon built in already but I'm going to work with this right now
+ It requires a custom csv that was formatted to remove special characters and spaces. I could make a version with data for each Pokemon built in already but I'm going to work with this right now.
+
+ Additionally, it requires you enter the number of the pokemon, not the names. I can fix that though but for now I am just working on other things now that the script runs as is.
 
 #>
 
