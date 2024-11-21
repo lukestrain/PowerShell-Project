@@ -5,11 +5,8 @@
 #>
 
 $dex = import-csv -path "C:\Users\lukes\GitHubRep\PowerShell-Project\Poke-ncrypt PowerShell\Pokedex Entries Formatted.csv"
-#$dex | fl
 
-# $dex[3].DexEntry
-
-$TestTeam = @(6, 12, 150, 151, 12, 18)
+# $TestTeam = @(6, 12, 150, 151, 12, 18)
 
 <# write-host $team
 foreach($p in $team){
