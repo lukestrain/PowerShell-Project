@@ -1,0 +1,10 @@
+This is a project I did on my own, and during my Microsoft Server and Cloud Adminstration class
+
+It started with a command to generate a 32-byte encryption key based on pokedex entries from the original pokemon video games. That script references a CSV file and is found at Po-Key.ps1.
+Then I decided to make  PS Module that could do various commands. I have built a key generation command and added some foundational functions to help other commands I make later.
+
+Po-Key.ps1 = Powershell script that takes an array of number (1-151) as input, then generates a 32 byte key based on those pokemon's pokedex entries.
+Poke-ncryptModule.psm1 = A Powershell Module that will host various commands related to encryption. Right now it just has the Po-Key function.
+DexDataExtract.ps1 = The script I used to turn Pokedex Entries.csv into custom powershell objects for each Pokemon. It was critical in the writing of Poke-ncryptModule.psm1.
+
+The CSVs are references about the Pokmeon data.
