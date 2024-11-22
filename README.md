@@ -6,4 +6,4 @@ Next I made a script that pulls info from an excel to make an OU and temporary u
 
 After that I made a script that finds all disabled users, removes them from their extra security groups and adds a note in their description about which groups they were removed from.
 
-Finally I made a Powerhsell module that generates symmetric encryption keys based on Pokemon teams
+Finally I made a Powerhsell module that generates a symmetric encryption key based on a selected Pokemon team.
