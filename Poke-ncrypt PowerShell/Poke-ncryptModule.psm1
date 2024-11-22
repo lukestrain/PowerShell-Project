@@ -2,6 +2,8 @@
 .Synopsis
 The idea for this module is to create custom PSObjects for each Pokemon, then create commands to generate a key, encrypt or decrypt based on those pokemon objects.
 
+other functions to add: Encrypt string with Vigenere cipher, decrypt with Vigenere cipher
+
 .Parameter 
 
 
@@ -270,4 +272,3 @@ function new-PoKey {
     return $hexString
 }
 
-#other functions to add: Encrypt string with Vigenere cipher, decrypt with Vigenere cipher.
